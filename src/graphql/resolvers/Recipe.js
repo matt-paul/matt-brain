@@ -1,5 +1,5 @@
 'use strict';
-
+const Prismic = require('prismic.io');
 const axios = require('axios');
 
 const RecipeController = {
@@ -26,5 +26,18 @@ const RecipeController = {
       });
   },
 };
+
+// Prismic.api('https://recipe-book.prismic.io/api')
+//   .then(api => {
+//     return api.query(''); // An empty query will return all the documents
+//   })
+//   .then(
+//     function(response) {
+//       console.log('Documents: ', response.results);
+//     },
+//     function(err) {
+//       console.log('Something went wrong: ', err);
+//     },
+//   );
 
 module.exports = RecipeController;

@@ -9,10 +9,12 @@
   "author": "matt paul",
   "license": "ISC",
   "dependencies": {
+    "aws-serverless-express": "^3.0.2",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
-    "graphql": "^0.10.5"
+    "graphql": "^0.10.5",
+    "prismic.io": "^3.5.7"
   }
 }
