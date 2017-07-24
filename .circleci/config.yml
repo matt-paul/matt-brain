@@ -28,6 +28,13 @@ jobs:
 
       - run: yarn install
 
+      - deploy:
+          name: Deployit
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              - aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
+            fi
+
       - save_cache:
           paths:
             - node_modules
@@ -35,11 +42,11 @@ jobs:
 
       # run tests!
       # - run: yarn test
-    deployment:
-      prod:
-        branch: master
-        commands:
-          - aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
+    # deployment:
+    #   prod:
+    #     branch: master
+    #     commands:
+    #       - aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
       # - deploy:
       #     name: Deploy to S3 if tests pass and branch is Master
       #     command: |
