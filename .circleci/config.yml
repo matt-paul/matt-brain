@@ -31,7 +31,7 @@ jobs:
       - deploy:
           command: |
               sudo apt-get update && sudo apt-get install -y awscli
-              aws s3 sync src s3://irish-brain-bucket/test --delete
+              aws s3 sync ../matt-brain s3://irish-brain-bucket/test --delete
 
       - save_cache:
           paths:
