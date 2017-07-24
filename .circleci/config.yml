@@ -29,7 +29,9 @@ jobs:
       - run: yarn install
 
       - deploy:
-          command: aws s3 sync ./matt-brain s3://matt-brain-bucket/test --delete
+          command: |
+              apt-get update && apt-get install -y awscli
+              aws s3 sync ~/Documents/matt-brain s3://matt-brain-bucket/test --delete
 
       - save_cache:
           paths:
