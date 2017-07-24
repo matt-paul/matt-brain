@@ -31,7 +31,7 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
+              aws s3 sync ./matt-brain s3://matt-brain-bucket/test --delete
             fi
 
       - save_cache:
