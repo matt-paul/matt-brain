@@ -29,10 +29,7 @@ jobs:
       - run: yarn install
 
       - deploy:
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync ./matt-brain s3://matt-brain-bucket/test --delete
-            fi
+          command: aws s3 sync ./matt-brain s3://matt-brain-bucket/test --delete
 
       - save_cache:
           paths:
