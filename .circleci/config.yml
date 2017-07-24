@@ -30,7 +30,7 @@ jobs:
 
       - deploy:
           name: Deployit
-          commands:
+          command:
             - aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
 
       - save_cache:
