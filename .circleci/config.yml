@@ -32,7 +32,7 @@ jobs:
           name: Deployit
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            - aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
+              aws s3 sync home/documents/matt-brain s3://matt-brain-bucket/test --delete
             else
               echo "Not master branch so not deploying"
             fi
